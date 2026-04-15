@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mensaje</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+<main class="center-layout">
+    <section class="center-card">
+        <span class="badge">Estado del proceso</span>
+        <h2 class="status-title" th:text="${message}">Mensaje del sistema</h2>
+        <p class="status-text">Puedes continuar con alguna de las acciones siguientes.</p>
+
+          <p class="notice"
+              th:if="${message != null and (#strings.containsIgnoreCase(message, 'token invalido o expirado') or #strings.containsIgnoreCase(message, 'token inválido o expirado'))}">
+            El token ya no es valido. Solicita uno nuevo desde el menu de recuperacion para continuar.
+        </p>
+
+        <div class="nav-grid" th:if="${showResetLink}">
+            <a class="btn btn-primary" href="/reset">Ingresar token y cambiar contrasena</a>
+        </div>
+
+        <div class="nav-grid" style="margin-top:12px;">
+            <a class="btn btn-secondary" href="/forgot-password">Recuperar contrasena</a>
+            <a class="btn btn-secondary" href="/">Ir al inicio</a>
+            <a class="btn btn-secondary" href="/register">Registrarse</a>
+        </div>
+
+           <div class="nav-grid" style="margin-top:12px;"
+               th:if="${message != null and (#strings.containsIgnoreCase(message, 'token invalido o expirado') or #strings.containsIgnoreCase(message, 'token inválido o expirado'))}">
+            <a class="btn btn-danger" href="/forgot-password">Solicitar nuevo token</a>
+        </div>
+    </section>
+</main>
+</body>
+</html>

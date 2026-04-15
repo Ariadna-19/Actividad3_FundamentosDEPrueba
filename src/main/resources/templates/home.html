@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+<main class="center-layout">
+    <section class="center-card">
+        <span class="badge">Sesion activa</span>
+        <h2 class="status-title">Bienvenido, <span th:text="${username}"></span></h2>
+        <p class="status-text">Desde aqui puedes gestionar acceso y recuperacion de credenciales.</p>
+        <div class="nav-grid">
+            <a class="btn btn-secondary" href="/forgot-password">Recuperar contrasena</a>
+            <a class="btn btn-secondary" href="/">Cerrar sesion</a>
+        </div>
+    </section>
+</main>
+</body>
+</html>

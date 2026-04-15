@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de sesión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+<main class="page-shell">
+    <section class="panel">
+        <span class="kicker">Seguridad Activa</span>
+        <h1>Gestion de acceso con verificacion reforzada</h1>
+        <p>Inicia sesion para continuar. El sistema protege cambios sensibles con pasos adicionales de identidad y auditoria.</p>
+    </section>
+
+    <section class="card">
+        <h2>Iniciar sesion</h2>
+        <p class="subtitle">Accede con tus credenciales.</p>
+        <form action="/login" method="post">
+            <label for="username">Usuario</label>
+            <input id="username" type="text" name="username" placeholder="Tu usuario" required />
+
+            <label for="password">Contrasena</label>
+            <input id="password" type="password" name="password" placeholder="Tu contrasena" required />
+
+            <button class="btn btn-primary" type="submit">Entrar</button>
+        </form>
+        <div class="link-row">
+            <a class="btn btn-secondary" href="/register">Crear cuenta</a>
+            <a class="btn btn-secondary" href="/forgot-password">Recuperar contrasena</a>
+        </div>
+    </section>
+</main>
+</body>
+</html>

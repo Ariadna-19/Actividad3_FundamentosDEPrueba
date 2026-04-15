@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+<main class="page-shell">
+    <section class="panel">
+        <span class="kicker">Nueva cuenta</span>
+        <h1>Comienza con un perfil protegido</h1>
+        <p>Registrate para acceder al portal y usar recuperacion segura con tokens y verificacion para acciones sensibles.</p>
+    </section>
+
+    <section class="card">
+        <h2>Crear cuenta</h2>
+        <p class="subtitle">Completa tus datos para registrarte.</p>
+        <form action="/register" method="post">
+            <label for="username">Usuario</label>
+            <input id="username" type="text" name="username" placeholder="Tu usuario" required />
+
+            <label for="email">Correo</label>
+            <input id="email" type="email" name="email" placeholder="nombre@dominio.com" required />
+
+            <label for="password">Contrasena</label>
+            <input id="password" type="password" name="password" placeholder="Crea una contrasena" required />
+
+            <label for="confirmPassword">Confirmar contrasena</label>
+            <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Repite tu contrasena" required />
+
+            <button class="btn btn-primary" type="submit">Crear cuenta</button>
+        </form>
+        <p class="helper">Regla recomendada: usa una clave larga, con mayusculas, minusculas, numeros y simbolos.</p>
+        <div class="link-row">
+            <a class="btn btn-secondary" href="/">Ir al inicio</a>
+        </div>
+    </section>
+</main>
+</body>
+</html>

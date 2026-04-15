@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nueva contraseña</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+<main class="page-shell">
+    <section class="panel">
+        <span class="kicker">Token temporal</span>
+        <h1>Validar token y crear nueva contrasena</h1>
+        <p>Ingresa el codigo recibido por correo. Si el token expiro, vuelve al menu de recuperacion para solicitar uno nuevo.</p>
+    </section>
+
+    <section class="card">
+        <h2>Cambio de contrasena</h2>
+        <p class="subtitle">Completa el token y define una nueva clave.</p>
+        <form action="/reset" method="post">
+            <label for="token">Token de recuperacion</label>
+            <input id="token" type="text" name="token" th:value="${token}" placeholder="Token recibido por correo" required />
+
+            <label for="newPassword">Nueva contrasena</label>
+            <input id="newPassword" type="password" name="newPassword" placeholder="Nueva contrasena" required />
+
+            <label for="confirmPassword">Confirmar nueva contrasena</label>
+            <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Repite la nueva contrasena" required />
+
+            <p class="helper">Minimo 12 caracteres, con mayuscula, minuscula, numero y simbolo.</p>
+            <button class="btn btn-primary" type="submit">Actualizar contrasena</button>
+        </form>
+        <div class="link-row">
+            <a class="btn btn-secondary" href="/forgot-password">Pedir nuevo token</a>
+            <a class="btn btn-secondary" href="/">Ir al inicio</a>
+        </div>
+    </section>
+</main>
+</body>
+</html>
